@@ -1,0 +1,6 @@
+vendor\lge\frameworks\av\filter_timescale\soundtouch 에서 생성되는 
+library가 *.a 형태의 static library이므로 
+이 *.so를 이루는 library까지 *.a 이외 Object code를 공개해야 하는 이슈로 
+해당 소스 코드 두개 파일을 개발실에서 공개하기로 함. 
+
+- 김근영 책임 ( MM 실 ) 

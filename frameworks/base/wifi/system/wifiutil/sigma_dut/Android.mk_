@@ -1,0 +1,105 @@
+LOCAL_PATH:= $(call my-dir)
+
+COMPILE_SIGMA_DUT_SRC := false
+COMPILE_SIGMA_DUT_SRC = $(shell if [ -d $(TOPDIR)vendor/lge/frameworks/base/wifi/system/sigma_dut ] ; then echo true; fi)
+
+ifneq ($(strip $(COMPILE_SIGMA_DUT_SRC)),true)
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := bin/wfa_dut
+LOCAL_MODULE := wfa_dut
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/getipconfig.sh
+LOCAL_MODULE := getipconfig.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+#LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/getpid.sh
+LOCAL_MODULE := getpid.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/getpstats.sh
+LOCAL_MODULE := getpstats.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/gpstats.sh
+LOCAL_MODULE := gpstats.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/stoping.sh
+LOCAL_MODULE := stoping.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/updatepid.sh
+LOCAL_MODULE := updatepid.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/wfaping.sh
+LOCAL_MODULE := wfaping.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/wfainit.sh
+LOCAL_MODULE := wfainit.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/dutinit.sh
+LOCAL_MODULE := dutinit.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := scripts/setbusybox.sh
+LOCAL_MODULE := setbusybox.sh
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := busybox/busybox
+LOCAL_MODULE := busybox
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_TAGS := eng debug
+include $(BUILD_PREBUILT)
+
+
+endif # COMPILE_SIGMA_DUT_SRC
